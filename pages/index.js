@@ -7,10 +7,10 @@ export default function Home({ cards }) {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="w-full flex items-center flex-col p-4 bg-gradient-to-b from-indigo-900 to-purple-800">
-        <span className="md:text-9xl text-6xl text-white">Wild x Wild</span>
-        <span className="md:text-4xl text-xl text-white">カードリスト</span>
+      <div className="w-full flex items-center flex-col p-2 bg-gradient-to-b from-green-900 to-green-800">
+        <img src={"/2.svg"} />
       </div>
+      <span className="p-4 md:text-4xl text-2xl font-bold text-green-900">カードリスト</span>
       <div className="flex flex-wrap justify-center gap-4 p-6">
         {cards.map(card => {
           const name = card.name
