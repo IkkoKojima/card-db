@@ -59,8 +59,13 @@ export default function Home({ cards }) {
   return (
     <div className="flex flex-col items-center min-h-screen">
       <Head>
-        <title>Create Next App</title>
+        <title>みんなで創るカードゲーム| WILDxWILD - カードリスト</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://wildxwild.vercel.app/" />
+        <meta property="og:image" content="https://res.cloudinary.com/dpgh283yp/image/upload/v1634232241/wildxwild_ogp.png" />
+        <meta property="og:title" content="みんなで創るカードゲーム| WILDxWILD - カードリスト" />
+        <meta property="og:description" content="カードゲーム好きが集まったコミュニティで製作中のデジタルカードゲーム(DCG)です" />
       </Head>
       <div className="w-full flex items-center flex-col p-2 bg-gradient-to-b from-green-900 to-green-800">
         <img src={"/2.svg"} />
@@ -72,30 +77,30 @@ export default function Home({ cards }) {
           <summary className="text-xl text-green-800 font-bold">並び替え</summary>
 
           <span className="text-xl text-gray-600">項目</span>
-          <div class="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <div className="flex items-center gap-2">
               <input type="radio" name="sort" value="cost" onClick={e => setSort(e.target.value)} className="h-6 w-6 text-gray-800 border-gray-300 focus:ring focus:ring-red-300 focus:ring-opacity-0" />
-              <span class="">コスト</span>
+              <span className="">コスト</span>
             </div>
             <div className="flex items-center gap-2">
               <input type="radio" name="sort" value="atk" onClick={e => setSort(e.target.value)} className="h-6 w-6 text-gray-800 border-gray-300 focus:ring focus:ring-red-300 focus:ring-opacity-0" />
-              <span class="">攻撃力</span>
+              <span className="">攻撃力</span>
             </div>
             <div className="flex items-center gap-2">
               <input type="radio" name="sort" value="def" onClick={e => setSort(e.target.value)} className="h-6 w-6 text-gray-800 border-gray-300 focus:ring focus:ring-red-300 focus:ring-opacity-0" />
-              <span class="">耐久力</span>
+              <span className="">耐久力</span>
             </div>
           </div>
 
           <span className="text-xl text-gray-600 mt-6">順序</span>
-          <div class="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <div className="flex items-center gap-2">
               <input type="radio" name="sortDirection" value="asc" onClick={e => setSortDirection(e.target.value)} className="h-6 w-6 text-gray-800 border-gray-300 focus:ring focus:ring-red-300 focus:ring-opacity-0" />
-              <span class="">昇順(↑)</span>
+              <span className="">昇順(↑)</span>
             </div>
             <div className="flex items-center gap-2">
               <input type="radio" name="sortDirection" value="dsc" onClick={e => setSortDirection(e.target.value)} className="h-6 w-6 text-gray-800 border-gray-300 focus:ring focus:ring-red-300 focus:ring-opacity-0" />
-              <span class="">降順(↓)</span>
+              <span className="">降順(↓)</span>
             </div>
           </div>
 
@@ -245,8 +250,8 @@ export default function Home({ cards }) {
           const src = `https://res.cloudinary.com/dpgh283yp/image/upload/w_1.15,y_-15,l_cards:frame_${color}/co_rgb:FFFFFF,g_north_west,x_85,y_70,l_text:Sawarabi%20Gothic_90_bold:${cost}${atk ? `/co_rgb:FFFFFF,g_north_west,x_90,y_970,l_text:Sawarabi%20Gothic_70_bold:${atk}` : ""}${def ? `/co_rgb:FFFFFF,g_north_west,x_645,y_970,l_text:Sawarabi%20Gothic_70_bold:${def}` : ""}/g_north,y_770,co_rgb:FFFFFF,l_text:Sawarabi%20Gothic_33_bold_center:${ability}/g_north,y_680,co_rgb:FFFFFF,l_text:Sawarabi%20Gothic_55_bold_center:${name}/cards/${img}.png`
 
           return (
-            <div className="flex flex-col items-end">
-              <img className="w-72 h-96" src={src} key={name} />
+            <div className="flex flex-col items-end" key={name}>
+              <img className="w-72 h-96" src={src} />
               <span className="text-xs text-gray-400">{`created by ${creator}`}</span>
               <span className="text-xs text-gray-400">{`illust by ${illust}`}</span>
             </div>
