@@ -270,6 +270,6 @@ export async function getStaticProps() {
     props: {
       cards,
     },
-    revalidate: 3600, // In seconds
+    revalidate: 300, // In seconds
   }
 }
