@@ -246,7 +246,7 @@ export default function Home({ cards }) {
           const def = card.def
           const creator = card.creator
           const illust = card.illust
-          const ability = card.ability.replace(/\r?\n/g, "%0A").replace(/\//g, "%25F").replace(/\+/g, "%2B")
+          const ability = card.ability.replace(/\r?\n/g, "%0A").replace(/\//g, "%252F").replace(/\+/g, "%2B")
           const src = `https://res.cloudinary.com/dpgh283yp/image/upload/w_1.15,y_-15,l_cards:frame_${color}/co_rgb:FFFFFF,g_north_west,x_85,y_70,l_text:Sawarabi%20Gothic_90_bold:${cost}${atk ? `/co_rgb:FFFFFF,g_north_west,x_90,y_970,l_text:Sawarabi%20Gothic_70_bold:${atk}` : ""}${def ? `/co_rgb:FFFFFF,g_north_west,x_645,y_970,l_text:Sawarabi%20Gothic_70_bold:${def}` : ""}/g_north,y_770,co_rgb:FFFFFF,l_text:Sawarabi%20Gothic_33_bold_center:${ability}/g_north,y_680,co_rgb:FFFFFF,l_text:Sawarabi%20Gothic_55_bold_center:${name}/cards/${img}.png`
 
           return (
